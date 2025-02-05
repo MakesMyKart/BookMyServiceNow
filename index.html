@@ -4,39 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book My Service Now</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-        .container {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 10px;
-        }
-        button:hover {
-            background-color: #218838;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to Book My Service Now</h1>
-        <p>Select a service and book instantly!</p>
-        <button onclick="alert('Booking System Coming Soon!')">Book Now</button>
-    </div>
+    <header>
+        <h1>🚀 Book My Service Now</h1>
+        <p>Choose a service & book instantly!</p>
+    </header>
+
+    <section class="service-list">
+        <div class="service-card">
+            <h3>👬 Rent a Friend</h3>
+            <p>Need a friend for an event or hangout?</p>
+            <button onclick="bookService('Rent a Friend', 500)">Book ₹500/hr</button>
+        </div>
+
+        <div class="service-card">
+            <h3>📞 Talk to Me</h3>
+            <p>Feeling lonely? Need advice? Call me!</p>
+            <button onclick="bookService('Talk to Me', 300)">Book ₹300/hr</button>
+        </div>
+
+        <div class="service-card">
+            <h3>🚪 Help Quitting Job</h3>
+            <p>Need help quitting your job? I'll assist!</p>
+            <button onclick="bookService('Quit Job Help', 700)">Book ₹700</button>
+        </div>
+
+        <div class="service-card">
+            <h3>🐶 Pet Services</h3>
+            <p>Need someone to take care of your pet?</p>
+            <button onclick="bookService('Pet Services', 400)">Book ₹400</button>
+        </div>
+
+        <div class="service-card">
+            <h3>👕 Fashion Advice</h3>
+            <p>Confused about what to wear? I'll guide you!</p>
+            <button onclick="bookService('Fashion Advice', 200)">Book ₹200</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
