@@ -11,7 +11,7 @@ function makePayment() {
     var amount = service === "rent-friend" ? 500 : service === "talk-to-me" ? 300 : 700;
 
     var options = {
-        "key": "YOUR_RAZORPAY_KEY",
+        "key": "rzp_live_vECzUJjFz7836Q",
         "amount": amount * 100,
         "currency": "INR",
         "name": "BookMyServiceNow",
