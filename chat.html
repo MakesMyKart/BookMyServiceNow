@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>const db = firebase.firestore();
+
+function sendMessage() {
+  var message = document.getElementById("messageInput").value;
+
+  db.collection("messages").add({
+    text: message,
+    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+  }).then(() => {
+    console.log("Message sent!");
+  }).catch((error) => {
+    console.error("Error sending message: ", error);
+  });
+}
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Chat With Me</title>
