@@ -1,51 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book My Service Now</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book My Service Now</title>
+  <!-- Animate.css for animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Razorpay Checkout -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 <body>
-    <header>
-        <h1>🚀 Book My Service Now</h1>
-        <p>Choose a service & book instantly!</p>
-    </header>
+  <header class="animate__animated animate__fadeInDown">
+    <h1>🚀 Book My Service Now</h1>
+    <p>Choose a service & book instantly!</p>
+    <nav>
+      <a href="login.html" class="nav-btn">Login</a>
+      <a href="chat.html" class="nav-btn">Chat With Me</a>
+    </nav>
+  </header>
 
-    <section class="service-list">
-        <div class="service-card">
-            <h3>👬 Rent a Friend</h3>
-            <p>Need a friend for an event or hangout?</p>
-            <button onclick="bookService('Rent a Friend', 500)">Book ₹500/hr</button>
-        </div>
+  <section class="service-list animate__animated animate__fadeInUp">
+    <div class="service-card">
+      <h3>👬 Rent a Friend</h3>
+      <p>Need a friend for an event or hangout?</p>
+      <button onclick="bookService('Rent a Friend', 500)">Book ₹500/hr</button>
+    </div>
 
-        <div class="service-card">
-            <h3>📞 Talk to Me</h3>
-            <p>Feeling lonely? Need advice? Call me!</p>
-            <button onclick="bookService('Talk to Me', 300)">Book ₹300/hr</button>
-        </div>
+    <div class="service-card">
+      <h3>📞 Talk to Me</h3>
+      <p>Feeling lonely? Need advice? Call me!</p>
+      <button onclick="bookService('Talk to Me', 300)">Book ₹300/hr</button>
+    </div>
 
-        <div class="service-card">
-            <h3>🚪 Help Quitting Job</h3>
-            <p>Need help quitting your job? I'll assist!</p>
-            <button onclick="bookService('Quit Job Help', 700)">Book ₹700</button>
-        </div>
+    <div class="service-card">
+      <h3>🚪 Help Quitting Job</h3>
+      <p>Need help quitting your job? I'll assist!</p>
+      <button onclick="bookService('Quit Job Help', 700)">Book ₹700</button>
+    </div>
 
-        <div class="service-card">
-            <h3>🐶 Pet Services</h3>
-            <p>Need someone to take care of your pet?</p>
-            <button onclick="bookService('Pet Services', 400)">Book ₹400</button>
-        </div>
+    <div class="service-card">
+      <h3>🐶 Pet Services</h3>
+      <p>Need someone to take care of your pet?</p>
+      <button onclick="bookService('Pet Services', 400)">Book ₹400</button>
+    </div>
 
-        <div class="service-card">
-            <h3>👕 Fashion Advice</h3>
-            <p>Confused about what to wear? I'll guide you!</p>
-            <button onclick="bookService('Fashion Advice', 200)">Book ₹200</button>
-        </div>
-    </section>
+    <div class="service-card">
+      <h3>👕 Fashion Advice</h3>
+      <p>Confused about what to wear? I'll guide you!</p>
+      <button onclick="bookService('Fashion Advice', 200)">Book ₹200</button>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
