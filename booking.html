@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Confirm Booking - Book My Service Now</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Confirm Your Booking</h1>
+  </header>
+
+  <section class="booking-section">
+    <p id="serviceInfo"></p>
+    <form action="https://formspree.io/f/https://formspree.io/f/xpwqllzl" method="POST">
+      <!-- Hidden fields to send service info -->
+      <input type="hidden" name="service" id="serviceInput">
+      <input type="hidden" name="price" id="priceInput">
+      
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="_replyto" placeholder="Enter your email" required>
+      
+      <!-- Optional: Additional notes -->
+      <label for="notes">Additional Notes (if any):</label>
+      <textarea id="notes" name="notes" placeholder="Your message"></textarea>
+      
+      <!-- Set Formspree _next field to redirect after submission -->
+      <input type="hidden" name="_next" value="booking-confirmation.html">
+      
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </section>
+
+  <script>
+    // Get URL parameters for service and price
+    function getParameterByName(name) {
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var url = window.location.href;
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    const service = getParameterByName("service") || "Service";
+    const price = getParameterByName("price") || "Price";
+    
+    // Update page content and form fields
+    document.getElementById("serviceInfo").innerText = `You are booking: ${service} (₹${price}${service === "Talk to Me" ? " per hour" : ""})`;
+    document.getElementById("serviceInput").value = service;
+    document.getElementById("priceInput").value = price;
+  </script>
+</body>
+</html>
