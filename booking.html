@@ -13,7 +13,7 @@
 
   <section class="booking-section">
     <p id="serviceInfo"></p>
-    <form action="https://formspree.io/f/https://formspree.io/f/xpwqllzl" method="POST">
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
       <!-- Hidden fields to send service info -->
       <input type="hidden" name="service" id="serviceInput">
       <input type="hidden" name="price" id="priceInput">
@@ -24,11 +24,10 @@
       <label for="email">Your Email:</label>
       <input type="email" id="email" name="_replyto" placeholder="Enter your email" required>
       
-      <!-- Optional: Additional notes -->
       <label for="notes">Additional Notes (if any):</label>
       <textarea id="notes" name="notes" placeholder="Your message"></textarea>
       
-      <!-- Set Formspree _next field to redirect after submission -->
+      <!-- _next field to redirect after submission -->
       <input type="hidden" name="_next" value="booking-confirmation.html">
       
       <button type="submit">Confirm Booking</button>
@@ -36,7 +35,7 @@
   </section>
 
   <script>
-    // Get URL parameters for service and price
+    // Function to get URL parameters
     function getParameterByName(name) {
       name = name.replace(/[\[\]]/g, "\\$&");
       var url = window.location.href;
@@ -48,12 +47,20 @@
     }
 
     const service = getParameterByName("service") || "Service";
-    const price = getParameterByName("price") || "Price";
+    let price = getParameterByName("price") || "Price";
     
-    // Update page content and form fields
-    document.getElementById("serviceInfo").innerText = `You are booking: ${service} (₹${price}${service === "Talk to Me" ? " per hour" : ""})`;
+    // Check if price is numeric; if not, display as "Contact for Price"
+    let priceText;
+    if (isNaN(price)) {
+      priceText = price;
+    } else {
+      priceText = "₹" + price + (service === "Talk to Me" ? " per hour" : "");
+    }
+    
+    document.getElementById("serviceInfo").innerText = `You are booking: ${service} (${priceText})`;
     document.getElementById("serviceInput").value = service;
     document.getElementById("priceInput").value = price;
   </script>
 </body>
 </html>
+
