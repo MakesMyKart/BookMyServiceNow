@@ -4,22 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Book My Service Now</title>
-  <link rel="stylesheet" href="style.css">
   <!-- Animate.css for simple animations -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="animate__animated animate__fadeInDown">
     <h1>🚀 Book My Service Now</h1>
     <p>Choose a service & book instantly!</p>
     <nav>
-      <!-- Navigation: Chat link is on main screen -->
+      <!-- Chat button on main screen -->
       <a href="chat.html" class="nav-btn">Chat With Me</a>
     </nav>
   </header>
 
   <section class="service-list animate__animated animate__fadeInUp">
-    <!-- Rent a Friend -->
+    <!-- 1. Rent a Friend -->
     <div class="service-card">
       <h3>👬 Rent a Friend</h3>
       <p>Need a friend for an event or hangout? (₹500 fixed)</p>
@@ -27,7 +27,7 @@
       <button onclick="window.location.href='details.html?service=Rent%20a%20Friend'">Details</button>
     </div>
     
-    <!-- Talk to Me -->
+    <!-- 2. Talk to Me -->
     <div class="service-card">
       <h3>📞 Talk to Me</h3>
       <p>Feeling depressed? Need someone to talk? (₹200 per hour)</p>
@@ -35,7 +35,7 @@
       <button onclick="window.location.href='details.html?service=Talk%20to%20Me'">Details</button>
     </div>
     
-    <!-- Help Quitting Job -->
+    <!-- 3. Help Quitting Job -->
     <div class="service-card">
       <h3>🚪 Help Quitting Job</h3>
       <p>Need help quitting your job? (₹400 fixed)</p>
@@ -43,11 +43,74 @@
       <button onclick="window.location.href='details.html?service=Quit%20Job%20Help'">Details</button>
     </div>
     
-    <!-- You can add more service cards here following the same structure -->
+    <!-- 4. Go Out With You -->
+    <div class="service-card">
+      <h3>🎉 Go Out With You</h3>
+      <p>Need a companion for an event or hangout? (Contact for Price)</p>
+      <button onclick="window.location.href='booking.html?service=Go%20Out%20With%20You&price=Contact'">Book</button>
+      <button onclick="window.location.href='details.html?service=Go%20Out%20With%20You'">Details</button>
+    </div>
+    
+    <!-- 5. Pet Services -->
+    <div class="service-card">
+      <h3>🐶 Pet Services</h3>
+      <p>Need someone to take care of your pet? (Contact for Price)</p>
+      <button onclick="window.location.href='booking.html?service=Pet%20Services&price=Contact'">Book</button>
+      <button onclick="window.location.href='details.html?service=Pet%20Services'">Details</button>
+    </div>
+    
+    <!-- 6. Fashion Advice -->
+    <div class="service-card">
+      <h3>👕 Fashion Advice</h3>
+      <p>Confused about what to wear? I'll guide you. (Contact for Price)</p>
+      <button onclick="window.location.href='booking.html?service=Fashion%20Advice&price=Contact'">Book</button>
+      <button onclick="window.location.href='details.html?service=Fashion%20Advice'">Details</button>
+    </div>
+    
+    <!-- 7. Movie/Series Recommendations -->
+    <div class="service-card">
+      <h3>🎬 Entertainment Recs</h3>
+      <p>Movies, TV shows, anime, and more recommendations. (Contact for Price)</p>
+      <button onclick="window.location.href='booking.html?service=Entertainment%20Recs&price=Contact'">Book</button>
+      <button onclick="window.location.href='details.html?service=Entertainment%20Recs'">Details</button>
+    </div>
+    
+    <!-- 8. Attend Online Class for You -->
+    <div class="service-card">
+      <h3>💻 Attend Online Class for You</h3>
+      <p>Let me attend your online class on your behalf. (Contact for Price)</p>
+      <button onclick="window.location.href='booking.html?service=Online%20Class%20Attendance&price=Contact'">Book</button>
+      <button onclick="window.location.href='details.html?service=Online%20Class%20Attendance'">Details</button>
+    </div>
+    
+    <!-- 9. Microsubscription Services -->
+    <div class="service-card">
+      <h3>📢 Microsubscriptions</h3>
+      <p>Daily voice notes, alarms, motivation, cool phrases, etc. (Contact for Price)</p>
+      <button onclick="window.location.href='booking.html?service=Microsubscription%20Services&price=Contact'">Book</button>
+      <button onclick="window.location.href='details.html?service=Microsubscription%20Services'">Details</button>
+    </div>
+    
+    <!-- 10. Personal Shopper During Sales -->
+    <div class="service-card">
+      <h3>🛍 Personal Shopper</h3>
+      <p>I’ll buy for you during sales when you can’t keep track. (Contact for Price)</p>
+      <button onclick="window.location.href='booking.html?service=Personal%20Shopper&price=Contact'">Book</button>
+      <button onclick="window.location.href='details.html?service=Personal%20Shopper'">Details</button>
+    </div>
+    
+    <!-- 11. Digital Grave Service -->
+    <div class="service-card">
+      <h3>⚰️ Digital Grave</h3>
+      <p>A unique service for digital legacy management. (Contact for Price)</p>
+      <button onclick="window.location.href='booking.html?service=Digital%20Grave&price=Contact'">Book</button>
+      <button onclick="window.location.href='details.html?service=Digital%20Grave'">Details</button>
+    </div>
     
   </section>
 
   <script src="script.js"></script>
 </body>
 </html>
+
 
