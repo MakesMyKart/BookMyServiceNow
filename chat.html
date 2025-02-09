@@ -3,22 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chat With Me - Book My Service Now</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Chat With Me - Messenger Style</title>
+  <style>
+    /* Basic styles for a messenger-like chat interface */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #e5ddd5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .chat-container {
+      background-color: #fff;
+      width: 350px;
+      max-width: 100%;
+      height: 500px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .chat-header {
+      background-color: #075e54;
+      color: #fff;
+      padding: 15px;
+      font-size: 18px;
+      text-align: center;
+    }
+    .chat-messages {
+      flex: 1;
+      padding: 10px;
+      background-color: #ece5dd;
+      overflow-y: auto;
+    }
+    .message {
+      margin: 5px 0;
+      display: flex;
+    }
+    .message.sent {
+      justify-content: flex-end;
+    }
+    .message.received {
+      justify-content: flex-start;
+    }
+    .message p {
+      max-width: 70%;
+      padding: 8px 12px;
+      border-radius: 15px;
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .sent p {
+      background-color: #dcf8c6;
+    }
+    .received p {
+      background-color: #fff;
+      border: 1px solid #ccc;
+    }
+    .chat-input {
+      display: flex;
+      border-top: 1px solid #ddd;
+      background-color: #f0f0f0;
+    }
+    .chat-input input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      font-size: 16px;
+    }
+    .chat-input button {
+      background-color: #075e54;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Chat With Me</h1>
-    <p>If you have any enquiry about our services, feel free to ask!</p>
-  </header>
+  <div class="chat-container">
+    <div class="chat-header">
+      Chat With Me
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <!-- Chat messages will appear here -->
+    </div>
+    <div class="chat-input">
+      <input type="text" id="chatInput" placeholder="Type your message..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
 
-  <section class="contact-container">
-    <form action="https://formspree.io/f/xpwqllzl" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="_replyto" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+  <script>
+    // Function to simulate sending a message
+    function sendMessage() {
+      var input = document.getElementById("chatInput");
+      var messageText = input.value.trim();
+      if (messageText !== "") {
+        appendMessage("sent", messageText);
+        input.value = "";
+        // Simulate a bot response after 1 second
+        setTimeout(function() {
+          appendMessage("received", "Thank you for your message. I'll get back to you soon!");
+        }, 1000);
+      }
+    }
+    
+    // Function to append messages to the chat
+    function appendMessage(type, text) {
+      var messagesContainer = document.getElementById("chatMessages");
+      var messageDiv = document.createElement("div");
+      messageDiv.classList.add("message", type);
+      var messageP = document.createElement("p");
+      messageP.textContent = text;
+      messageDiv.appendChild(messageP);
+      messagesContainer.appendChild(messageDiv);
+      // Auto-scroll to the bottom
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+  </script>
 </body>
 </html>
