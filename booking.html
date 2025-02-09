@@ -13,8 +13,8 @@
 
   <section class="booking-section">
     <p id="serviceInfo"></p>
-    <form action="https://formspree.io/f/https://formspree.io/f/xpwqllzl" method="POST">
-      <!-- Hidden fields to send service info -->
+    <form action="https://formspree.io/f/xpwqllzl" method="POST">
+      <!-- Hidden fields to pass service details -->
       <input type="hidden" name="service" id="serviceInput">
       <input type="hidden" name="price" id="priceInput">
       
@@ -25,9 +25,9 @@
       <input type="email" id="email" name="_replyto" placeholder="Enter your email" required>
       
       <label for="notes">Additional Notes (if any):</label>
-      <textarea id="notes" name="notes" placeholder="Your message"></textarea>
+      <textarea id="notes" name="notes" placeholder="Your message" rows="4"></textarea>
       
-      <!-- _next field to redirect after submission -->
+      <!-- _next field redirects to booking-confirmation.html after submission -->
       <input type="hidden" name="_next" value="booking-confirmation.html">
       
       <button type="submit">Confirm Booking</button>
@@ -35,7 +35,7 @@
   </section>
 
   <script>
-    // Function to get URL parameters
+    // Function to get URL parameters by name
     function getParameterByName(name) {
       name = name.replace(/[\[\]]/g, "\\$&");
       var url = window.location.href;
@@ -46,21 +46,23 @@
       return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
 
+    // Retrieve "service" and "price" from the URL
     const service = getParameterByName("service") || "Service";
     let price = getParameterByName("price") || "Price";
     
-    // Check if price is numeric; if not, display as "Contact for Price"
+    // Format the price display. If price is numeric, show as ₹amount.
     let priceText;
     if (isNaN(price)) {
       priceText = price;
     } else {
+      // For "Talk to Me", append " per hour"; otherwise, show fixed price.
       priceText = "₹" + price + (service === "Talk to Me" ? " per hour" : "");
     }
     
+    // Update the page content and hidden form fields
     document.getElementById("serviceInfo").innerText = `You are booking: ${service} (${priceText})`;
     document.getElementById("serviceInput").value = service;
     document.getElementById("priceInput").value = price;
   </script>
 </body>
 </html>
-
