@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="service-title">Service Details</h1>
+    </header>
+
+    <main>
+        <section class="details">
+            <img id="service-image" src="" alt="Service Image" style="max-width:100%; border-radius:10px;">
+
+            <p id="service-description"></p>
+
+            <button onclick="history.back()">Go Back</button>
+        </section>
+    </main>
+
+    <script>
+        // Get service name from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const service = urlParams.get('service');
+
+        // Service details
+        const servicesData = {
+            "rent-a-friend": {
+                title: "Rent a Friend",
+                image: "https://source.unsplash.com/800x400/?friends",
+                description: "Need company for an event, party, or just a casual outing? Rent me as your friend and enjoy a fun, engaging time! I will accompany you for casual hangouts, networking events, weddings, or even just a relaxing day out. (Limited to local city bookings)."
+            },
+            "talk-to-me": {
+                title: "Talk to Me",
+                image: "https://source.unsplash.com/800x400/?talking,conversation",
+                description: "Feeling stressed or just need someone to chat with? Talk to me for ₹200 per hour. You can share your thoughts, discuss your problems, or just have a fun chat. (This is NOT a dating service)."
+            },
+            "help-quitting-job": {
+                title: "Help Quitting Job",
+                image: "https://source.unsplash.com/800x400/?career,quit",
+                description: "Struggling to resign? Need help writing a resignation letter or dealing with your boss? I will guide you in quitting your job smoothly and professionally."
+            },
+            "hangout-companion": {
+                title: "Event/Hangout Companion",
+                image: "https://source.unsplash.com/800x400/?party,friendship",
+                description: "Going to an event alone? Hire me as your companion! We can go to parties, weddings, concerts, or any social gathering. (Availability depends on location)."
+            }
+        };
+
+        // Update page with service details
+        if (servicesData[service]) {
+            document.getElementById("service-title").innerText = servicesData[service].title;
+            document.getElementById("service-image").src = servicesData[service].image;
+            document.getElementById("service-description").innerText = servicesData[service].description;
+        } else {
+            document.getElementById("service-title").innerText = "Service Not Found";
+            document.getElementById("service-description").innerText = "The service you're looking for does not exist.";
+        }
+    </script>
+
+</body>
+</html>
